@@ -7,13 +7,13 @@ JOBS = [
     'id': 1,
     'title': 'Software Engineer',
     'location': 'USA',
-    'salary': '150000',
+    'salary': '$150,000',
   },
   {
     'id': 2,
     'title': 'Backend Engineer',
     'location': 'USA',
-    'salary': '250000',
+    'salary': '$250,000',
   },
   {
     'id': 3,
@@ -26,6 +26,7 @@ JOBS = [
 @app.route("/")
 def hello():
   return render_template('home.html', jobs=JOBS, company_name="Google")
+
 
 @app.route('/jobs')
 def list_jobs():

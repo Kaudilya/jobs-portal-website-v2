@@ -10,19 +10,34 @@
       width:100%;
     height:500px;
       object-fit:cover;
+      margin-bottom:16px;
+    }
+
+    #pplWorking{
+      width:100%;
+      height: 100%;
+      object-fit:cover;
+      border-radius:12px;
     }
   </style>
-  
-  }
 
 </head>
 <body>
+  {% include 'nav.html' %}
+  <img id="banner" class="img-fluid" src="https://jobs-portal-website-1--kaudilyar.repl.co/static/banner.jpg">
   <div class="container">
   <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-  <img id="banner" class="img-fluid" src="https://jobs-portal-website-1--kaudilyar.repl.co/static/banner.jpg">
-  <p class="lead">
-    Trees. It was something about the trees. The way they swayed with the wind in unison. The way they shaded the area around them. The sounds of their leaves in the wind and the creaks from the branches as they sway, The trees were making a statement that I just couldn't understand.Trees. It was something about the trees. The way they swayed with the wind in unison. The way they shaded the area around them. The sounds of their leaves in the wind and the creaks from the branches as they sway, The trees were making a statement that I just couldn't understand.Trees. It was something about the trees. The way they swayed with the wind in unison. The way they shaded the area around them. The sounds of their leaves in the wind and the creaks from the branches as they sway, The trees were making a statement that I just couldn't understand.Trees. It was something about the trees. The way they swayed with the wind in unison. The way they shaded the area around them. The sounds of their leaves in the wind and the creaks from the branches as they sway, The trees were making a statement that I just couldn't understand.
+  <div class="row" style="margin-bottom:20px">
+    <div class="col-md-7">
+      <p class="lead">
+    {{company_name}} is a trailblazing technology company at the forefront of transformative advancements. With an unwavering commitment to pushing the boundaries of innovation, we are dedicated to creating solutions that shape the future in profound ways. Our company envisions a world where technology blends seamlessly with human potential, making the impossible possible and the unimaginable a reality.<br><br>
+        Our mission is to redefine industries and elevate human experiences through cutting-edge technology and visionary ideas. By fostering a culture of curiosity, collaboration, and creativity, we strive to pioneer groundbreaking solutions that have a positive impact on society, the environment, and the way we live and work.
   </p>
+    </div>
+    <div class="d-none d-md-block col-md-5">
+      <img id="pplWorking" src="/static/pplWorking.jpg">
+    </div>
+  </div>
   <h2 class="text-center mt-2 mb-3">Job Openings</h2>
   <div>
     {% for job in jobs %}
@@ -30,9 +45,9 @@
     {% endfor %}
   </div>
   <div class="text-center">
-    <button class="btn btn-dark">Contact Us</button>
-    <p class="mt-1">Copyright 2023, {{company_name}}</p>
+    <a href="mailto:hello@jovian.ai?subject=Need%20Customer%20Support&body=Your%20Name%3A%20%3C%20Name%20here%20%3E%0D%0AQuestion%3A%0D%0A%3C%20Question%20here%20%3E%0D%0A" class="btn btn-dark">Contact Us</a>
   </div>
 </div>
+  {% include 'footer.html' %}
 </body>
 </html>
