@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'bootstrap.html' %}
+    <title>{{ job.title }}</title>
+  </head>
+
+  <body>
+    {% include 'nav.html' %}
+    <!-- {% include 'banner.html' %} -->
+
+    <div class="container">
+      <h2 class="text-center mt-4 mb-4">Open Position</h1>
+      <!-- <h4>Title</h4> -->
+      <h3 class="mb-0 fs-2"> {{job.title}}</h3>
+
+      <!-- <h4>Location</h4> -->
+      <p class="fs-4"> {{job.location}}</p>
+      
+      <br>
+      
+      <h4>Responsibilities</h4>
+      <!-- <p class="lead"> {{job.responsibilities}}</p> -->
+      <ul>
+        {% for line in job.responsibilities.split("\n") %}
+        <li class="lead"> {{ line }} </li>
+        {% endfor %}
+      </ul>
+
+      <h4>Requirements</h4>
+      <!-- <p class="lead"> {{job.requirements}}</p> -->
+      <ol>
+        {% for line in job.requirements.split("\n") %}
+        <li class="lead"> {{ line }}</li>
+        {% endfor %}
+      </ol>
+
+      {% if job.salary is not none %}
+      <h4>Salary</h4>
+      <p class="lead"> {{job.currency}}{{job.salary}}</p>
+      {% endif %}
+      
+    </div>
+  
+    {% include 'footer.html' %}
+  </body>
+</html>
