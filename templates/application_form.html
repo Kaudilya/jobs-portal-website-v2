@@ -1,6 +1,6 @@
 <div>
   <h3> Application Form </h3>
-  <form action="/job/{{job['id']}}/apply">
+  <form action="/job/{{job['id']}}/apply" method="post">
     
     <div class="mb-4">
     <label>Full Name</label><br>
@@ -9,8 +9,7 @@
 
     <div class="mb-4">
     <label>Address</label><br>
-    <input type = "text" name = "address_1" placeholder="Address line 1">
-    <input type = "text" name = "address_2" placeholder="Address line 2">
+    <textarea name = "address" placeholder="Enter your home address here"></textarea>
     </div>
 
     <div class="mb-4">
@@ -20,26 +19,26 @@
 
     <div class="mb-4">
     <label>LinkedIn</label><br>
-    <input type = "text" name = "linkedin" placeholder="www.linkedin.com/...">
+    <input type = "text" name = "linkedin_url" placeholder="www.linkedin.com/...">
     </div>
 
     <div class="mb-4">
     <label>Education</label><br>
-    <input type = "text" name = "education" placeholder="Enter your education">
+    <input type = "text" name = "education" placeholder="Enter your recent education">
     </div>
 
     <div class="mb-4">
     <label>Work Experience</label><br>
-    <input type = "text" name = "work_experience" placeholder="Enter your work experience">
+    <textarea name = "work_experience" placeholder="Enter your work experience"></textarea>
     </div>
 
     <div class="mb-4">
     <label>Resume Link</label><br>
-    <input type = "text" name = "resume_link" placeholder="Enter your resume link">
+    <input type = "text" name = "resume_url" placeholder="Enter your resume link">
     </div>
 
     <div class="mb-4">
-    <input type="submit" name = "submit">
+    <input type="submit">
     </div>
     
   </form>

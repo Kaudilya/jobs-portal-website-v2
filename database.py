@@ -34,6 +34,16 @@ def load_job_from_db(id):
     else:
       return dict(rows[0]._asdict())
 
+
+def add_application_to_db(job_id, data):
+  with engine.connect() as conn:
+    query = text(
+      "INSERT INTO applications (job_id, full_name, linkedin_url, education, work_experience, resume_url) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')"
+      .format(job_id, data['full_name'], data['linkedin_url'],
+              data['education'], data['work_experience'], data['resume_url']))
+
+    conn.execute(query)
+
   # result_all = result.all()
   # print("type(result_all) : ", type(result_all))
   # print("result_all : ", result_all)
